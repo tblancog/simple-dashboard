@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Requirements:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Simple Dashboard
 
-## Available Scripts
+Build a Simple Dashboard as a single-page application in React.js or Next.js using the design from this Figma link: Figma Link
+Basic Requirements
+Home Page:
 
-In the project directory, you can run:
+- Pod Online Status
+- Total Deliveries - contains drop down option or Last Week and Last Month
+- Total Time in Pod - contains drop down option or Last Week and Last Month
+- Total Users - contains drop down option or Last Week and Last Month
+- Mock the API route: [GET] /home
+  Content-Type: application/json Response: {
+  pod: { locationName: { podName: { podOnlineStatus: boolean } } },
+  Stats: { totalDeliveries: int, totalTimeInPod: int (in minutes), totalUsers: int } }
+- Ability to change from light mode to dark mode.
+- Include tests.
+  Extra Features (Optional)
+  Responsiveness:
+- Make the app responsive.
+- The app should function properly on various mobile devices.
+  Report
+- Displays a table with export CSV functionality
+- Mock the API route: [GET] /report
+  Content-Type: application/json
+  Response: { Table1: { /\*_ make up your own data to display _/ } }
+- Mock the API route: [GET] /report?fileType=csv
+  Content-Type: text/csv
+  Response: { /\*_ Table1 as csv _/ }
+  Settings Page:
+- Ability to change display name
+- Ability to change language (i18n and l10n)
+  Page:
+  Accessibility: - Aria
 
-### `npm start`
+## Summary
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This challenge app is about dashboard according to provided figma design, it works either with desktop or mobile platforms, it's possible to switch to a dark theme and go to different client routes such as Home, Report and settings. Also mock APIs are provided as well for home and report routes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+- Clone repo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Install npm dependencies
 
-### `npm run build`
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Run back and frondend concurrently
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm run dev
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Tests
 
-### `npm run eject`
+Work in progress, will be available soon.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Retrospective
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+For basic frontend requirements spent around 6 hours spent among three days.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Decided to use Chakra UI since it seems to be easier to set up styling to match UI requirements, also because it has built in utilities for dark theme.
+- Spent so much time trying to set and extend a theme.
+- Spent some time trying to be more precise on sizes as mobile was an optional but (at least for me) is required these days.
+- Spent so much time trying to refactor and still needs some more refactoring.
+- Missed some required and optional features: unit tests (will be done soon) and optional ones like accesibility, display name and report page (just the frontend part, backend works).
+- Overall, I really enjoyed making this challenge.
