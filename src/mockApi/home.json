@@ -1,0 +1,79 @@
+{
+  "pod":{
+    "location A":{
+      "Angela":{
+        "podOnlineStatus":true
+      },
+      "Catherine":{
+        "podOnlineStatus":false
+      },
+      "Brittany":{
+        "podOnlineStatus":true
+      },
+      "Daisy":{
+        "podOnlineStatus":false
+      }
+    },
+    "location B":{
+      "Brittany":{
+        "podOnlineStatus":true
+      },
+      "Angela":{
+        "podOnlineStatus":false
+      },
+      "Daisy":{
+        "podOnlineStatus":false
+      },
+      "Catherine":{
+        "podOnlineStatus":false
+      }
+    },
+    "location C":{
+      "Brittany":{
+        "podOnlineStatus":true
+      },
+      "Catherine":{
+        "podOnlineStatus":true
+      },
+      "Angela":{
+        "podOnlineStatus":true
+      },
+      "Daisy":{
+        "podOnlineStatus":true
+      }
+    },
+    "location D":{
+      "Daisy":{
+        "podOnlineStatus":false
+      },
+      "Catherine":{
+        "podOnlineStatus":false
+      },
+      "Brittany":{
+        "podOnlineStatus":false
+      },
+      "Angela":{
+        "podOnlineStatus":false
+      }
+    },
+    "location E":{
+      "Catherine":{
+        "podOnlineStatus":true
+      },
+      "Angela":{
+        "podOnlineStatus":true
+      },
+      "Daisy":{
+        "podOnlineStatus":false
+      },
+      "Brittany":{
+        "podOnlineStatus":true
+      }
+    }
+  },
+  "Stats":{
+    "totalDeliveries":38,
+    "totalTimeInPod":3800,
+    "totalUsers":1552
+  }
+}

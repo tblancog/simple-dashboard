@@ -2,10 +2,15 @@ import React from "react";
 import { Flex, ListIcon, ListItem, Text } from "@chakra-ui/react";
 import { BsCircleFill } from "react-icons/bs";
 
-const UserListItem = ({ item }) => {
+const UserListItem = ({ item, isOnline }) => {
   return (
     <Flex alignItems={"center"}>
-      <ListIcon as={BsCircleFill} color="green.500" w={3} h={3} />
+      <ListIcon
+        as={BsCircleFill}
+        color={isOnline ? "green.500" : "red.500"}
+        w={3}
+        h={3}
+      />
       <ListItem>
         <Text fontWeight={"bold"} fontSize="sm">
           {item}

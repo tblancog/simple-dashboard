@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   Flex,
@@ -9,16 +9,17 @@ import {
 } from "@chakra-ui/react";
 import ColorSwitcher from "components/ColorSwitcher";
 import PodLocationList from "components/PodLocationList";
-import InfoCard from "components/InfoCard";
+import StatCard from "components/StatCard";
+import { formatThousand, toHHMM } from "helpers";
 const Home = () => {
+  const [pods, setPods] = useState({ Stats: {}, pod: {} });
+
   useEffect(() => {
-    fetch("api/home", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    fetch("/api/home")
       .then((res) => res.json())
-      .then((data) => data);
+      .then((data) => {
+        setPods(data);
+      });
   }, []);
 
   const colorHook = useColorMode();
@@ -56,32 +57,26 @@ const Home = () => {
         </Heading>
 
         {/* Pod locations */}
-        <PodLocationList
-          locations={[
-            "Location A",
-            "Location B",
-            "Location C",
-            "Location D",
-            "Location E",
-          ]}
-        />
+        <PodLocationList locations={pods.pod} />
       </Box>
+
+      {/* Stat Cards */}
       <Flex wrap={"wrap"} mt={"25px"} justifyContent={"space-between"} gap={3}>
-        <InfoCard
+        <StatCard
           title="Total Deliveries"
-          bodyText="38"
+          bodyText={pods.Stats.totalDeliveries}
           footerText="25% Improvement"
           bg={bg.cardOneBg}
         />
-        <InfoCard
+        <StatCard
           title="Total Time in Pod"
-          bodyText="12 hours 28 min"
+          bodyText={toHHMM(pods.Stats.totalTimeInPod)}
           footerText="48% Improvement"
           bg={bg.cardTwoBg}
         />
-        <InfoCard
+        <StatCard
           title="Total Users"
-          bodyText="1,552"
+          bodyText={formatThousand(pods.Stats.totalUsers)}
           footerText="48% Improvement"
           bg={bg.cardThreeBg}
         />

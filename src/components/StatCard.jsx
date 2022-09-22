@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-const InfoCard = ({ title, bodyText, footerText, bg }) => {
+const StatCard = ({ title, bodyText, footerText, bg }) => {
   const textColor = useColorModeValue("fontColor.darkMode", "white");
   const boxShadow = `0px 3px 6px rgba(0, 0, 0, 0.1), 
                       0px 4px 8px rgba(0, 0, 0, 0.08), 
@@ -62,4 +62,4 @@ const InfoCard = ({ title, bodyText, footerText, bg }) => {
   );
 };
 
-export default InfoCard;
+export default StatCard;
