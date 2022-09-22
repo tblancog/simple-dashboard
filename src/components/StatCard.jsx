@@ -17,7 +17,8 @@ const StatCard = ({ title, bodyText, footerText, bg }) => {
     <Flex
       flexDirection="column"
       justifyContent={"space-between"}
-      w={"360px"}
+      w={"100%"}
+      maxW={"360px"}
       h={"200px"}
       bg={bg}
       boxShadow={boxShadow}

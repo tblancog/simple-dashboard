@@ -56,7 +56,9 @@ const colors = {
     darkMode: "#FFF",
     secondary: "#C2C2C2",
   },
-
+  layout: {
+    containerWidth: "1150px",
+  },
   navy: {
     700: "#E2EAE8",
     negative700: "#8E7F69",

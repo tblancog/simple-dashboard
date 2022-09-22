@@ -25,17 +25,14 @@ const ColorSwitcher = ({ colorState }) => {
           fontWeight={"bold"}
           marginLeft={"auto"}
         >
-          {colorMode ===
-          (
+          {colorMode === "dark" ? (
             <Text display={"inline"} color="white">
               Light Mode
             </Text>
-          ) ? (
-            <Text display={"inline"} color="fontColor.primary">
-              Light Mode
-            </Text>
           ) : (
-            "Dark Mode"
+            <Text display={"inline"} color="fontColor.primary">
+              Dark Mode
+            </Text>
           )}
           <Switch
             color={"navy.1000"}

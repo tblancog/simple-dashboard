@@ -3,11 +3,9 @@ import {
   Container,
   Flex,
   Heading,
-  useColorMode,
   Box,
   useColorModeValue,
 } from "@chakra-ui/react";
-import ColorSwitcher from "components/ColorSwitcher";
 import PodLocationList from "components/PodLocationList";
 import StatCard from "components/StatCard";
 import { formatThousand, toHHMM } from "helpers";
@@ -22,7 +20,6 @@ const Home = () => {
       });
   }, []);
 
-  const colorHook = useColorMode();
   const bg = {
     cardOneBg: useColorModeValue("highlight.navy", "highlight.negativeNavy"),
     cardTwoBg: useColorModeValue(
@@ -32,15 +29,7 @@ const Home = () => {
     cardThreeBg: useColorModeValue("highlight.sky", "highlight.negativeSky"),
   };
   return (
-    <Container maxW={"90%"} py={{ base: 5, lg: "75px" }}>
-      {/* Title */}
-      <Flex alignItems={"center"}>
-        <Heading color={"primary"} size={"2xl"}>
-          Hello John
-        </Heading>
-        <ColorSwitcher colorState={colorHook} />
-      </Flex>
-
+    <Container maxW={"1150px"}>
       {/* Status box */}
       <Box
         w={"100%"}

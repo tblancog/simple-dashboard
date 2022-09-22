@@ -1,4 +1,5 @@
 import { Flex, Box, Divider, List, Text } from "@chakra-ui/react";
+import { uniqueId } from "helpers";
 import React from "react";
 import UserListItem from "./UserListItem";
 
@@ -9,11 +10,11 @@ const PodLocationList = ({ locations }) => {
       {entries.map((loc) => {
         const [locationName, pods] = loc;
         return (
-          <Box minW={"187px"}>
+          <Box minW={"187px"} key={uniqueId()}>
             <Text color={"primary"} fontSize={".85rem"} fontWeight={"bold"}>
               {locationName}
-              <Divider borderWidth={"1px"} borderColor={"typography.primary"} />
             </Text>
+            <Divider borderWidth={"1px"} borderColor={"typography.primary"} />
 
             <Flex pt={"1rem"}>
               <List display={"flex"} flexDirection={"row"}>
@@ -22,14 +23,13 @@ const PodLocationList = ({ locations }) => {
                   flexDirection={"column"}
                   gap={".25rem"}
                 >
-                  {/* <pre>{JSON.stringify(location)}</pre> */}
-                  {Object.entries(pods).map((pods) => {
+                  {Object.entries(pods).map((pods, key) => {
                     const [podName, status] = pods;
                     return (
                       <UserListItem
+                        key={uniqueId()}
                         item={podName}
                         isOnline={status.podOnlineStatus}
-                        key={podName}
                       />
                     );
                   })}

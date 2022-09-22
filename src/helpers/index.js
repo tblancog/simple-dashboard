@@ -22,3 +22,8 @@ export const toHHMM = (num) => {
   }
   return `${strHours} ${strMin}`;
 };
+
+/**
+ * Return a random string of 16 characters, starting at the 3rd character.
+ */
+export const uniqueId = () => Math.random().toString(16).slice(2);
