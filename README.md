@@ -1,6 +1,5 @@
-# Requirements:
 
-## Simple Dashboard
+# Simple Dashboard
 
 Build a Simple Dashboard as a single-page application in React.js or Next.js using the design from this Figma link: Figma Link
 Basic Requirements
@@ -48,7 +47,7 @@ This challenge app is about dashboard according to provided figma design, it wor
 npm install
 ```
 
-- Run back and frondend concurrently
+- Run back and frontend concurrently
 
 ```bash
 npm run dev
@@ -56,7 +55,9 @@ npm run dev
 
 ## Tests
 
-Work in progress, will be available soon.
+```bash
+npm run test
+```
 
 ## Retrospective
 
@@ -66,5 +67,5 @@ For basic frontend requirements spent around 6 hours spent among three days.
 - Spent so much time trying to set and extend a theme.
 - Spent some time trying to be more precise on sizes as mobile was an optional but (at least for me) is required these days.
 - Spent so much time trying to refactor and still needs some more refactoring.
-- Missed some required and optional features: unit tests (will be done soon) and optional ones like accesibility, display name and report page (just the frontend part, backend works).
+- Working in progress on unit tests
 - Overall, I really enjoyed making this challenge.
