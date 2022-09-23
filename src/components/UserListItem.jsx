@@ -1,10 +1,10 @@
 import React from "react";
-import { Flex, ListIcon, ListItem, Text } from "@chakra-ui/react";
+import { Flex, List, ListIcon, ListItem, Text } from "@chakra-ui/react";
 import { BsCircleFill } from "react-icons/bs";
 
 const UserListItem = ({ item, isOnline }) => {
   return (
-    <Flex alignItems={"center"}>
+    <Flex as={List} alignItems={"center"}>
       <ListIcon
         as={BsCircleFill}
         color={isOnline ? "green.500" : "red.500"}

@@ -15,7 +15,7 @@ const mockColorState = {
   colorMode: "dark",
   toggleColorMode: jest.fn(),
 };
-it.only("Renders component", () => {
+it("Renders component", () => {
   const { baseElement } = render(<ColorSwitcher colorState={mockColorState} />);
   expect(baseElement instanceof HTMLBodyElement).toBeTruthy();
 });
