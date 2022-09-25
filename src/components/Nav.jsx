@@ -41,7 +41,7 @@ const Nav = () => (
     flexDirection={"column"}
     justifyContent={"flex-start"}
     alignItems={"center"}
-    py={{ base: 5, lg: "75px" }}
+    pt={{ base: 5, lg: "75px" }}
     h={{ lg: "100vh" }}
   >
     <Image src={logo} />
