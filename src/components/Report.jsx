@@ -1,9 +1,20 @@
-import { Box, Container } from "@chakra-ui/react";
-import React from "react";
+import {
+  Box,
+  Button,
+  Center,
+  Container,
+  Heading,
+  Text,
+} from "@chakra-ui/react";
+import { downloadCsv } from "../helpers";
+import React, { useState } from "react";
+import { BsDownload } from "react-icons/bs";
 
 const Report = () => {
+  const [isDownloadStarted, setIsDownloadStarted] = useState(false);
+
   return (
-    <Container maxW={"90%"} py={{ base: 5, lg: "75px" }}>
+    <Container maxW={"1150px"}>
       {/* Status box */}
       <Box
         w={"100%"}
@@ -14,7 +25,30 @@ const Report = () => {
         boxShadow="0px 3px 6px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(0, 0, 0, 0.08), 0px 1px 12px rgba(0, 0, 0, 0.04)"
         p="6"
         rounded="md"
-      ></Box>
+      >
+        <Heading color={"typography.primary"} fontSize={"1.5rem"}>
+          Export CSV file
+        </Heading>
+        <Center height={"200px"}>
+          {!isDownloadStarted ? (
+            <Button
+              leftIcon={<BsDownload />}
+              color={"fontColor.primary"}
+              onClick={() => downloadCsv(setIsDownloadStarted)}
+            >
+              Export CSV
+            </Button>
+          ) : (
+            <Text
+              fontSize={"lg"}
+              fontWeight={"bold"}
+              color={"fontColor.primary"}
+            >
+              Download started!
+            </Text>
+          )}
+        </Center>
+      </Box>
     </Container>
   );
 };

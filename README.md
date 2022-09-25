@@ -1,4 +1,3 @@
-
 # Simple Dashboard
 
 Build a Simple Dashboard as a single-page application in React.js or Next.js using the design from this Figma link: Figma Link
@@ -45,6 +44,12 @@ This challenge app is about dashboard according to provided figma design, it wor
 
 ```bash
 npm install
+```
+
+- Rename .env.example to .env
+
+```bash
+mv .env.example .env
 ```
 
 - Run back and frontend concurrently

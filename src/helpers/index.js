@@ -27,3 +27,17 @@ export const toHHMM = (num) => {
  * Return a random string of 16 characters, starting at the 3rd character.
  */
 export const uniqueId = () => Math.random().toString(16).slice(2);
+
+/**
+ * It downloads a CSV file from the API and then calls the handler function
+ * @param handler - This is a function that will be called when the download is complete.
+ */
+export const downloadCsv = (handler) => {
+  // if (window) {
+  //   window.location.href = `${process.env.REACT_APP_API_BASE_URL}/report?fileType=csv`;
+  // }
+  window.location.assign(
+    `${process.env.REACT_APP_API_BASE_URL}/report?fileType=csv`
+  );
+  handler(true);
+};

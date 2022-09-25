@@ -22,6 +22,7 @@ const routes = (fastify, _, done) => {
     res
       .type("text/csv")
       .header("Content-disposition", "attachment; filename=report.csv")
+      .header("Content-Type", "application/octet-stream")
       .send(csvString);
     done();
   });
