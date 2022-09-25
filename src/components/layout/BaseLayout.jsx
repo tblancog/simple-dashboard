@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, GridItem, useColorModeValue } from "@chakra-ui/react";
-import Nav from "components/Nav";
+import Nav from "components/layout/Nav";
 import Header from "./Header";
 
 const BaseLayout = ({ children }) => {

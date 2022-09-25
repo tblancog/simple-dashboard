@@ -1,8 +1,8 @@
-import BaseLayout from "components/BaseLayout";
-import Home from "./components/Home";
+import BaseLayout from "components/layout/BaseLayout";
+import Home from "./components/routes/Home";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Report from "components/Report";
+import Report from "components/routes/Report";
 import { UserContext } from "context";
 
 function App() {

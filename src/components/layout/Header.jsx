@@ -1,6 +1,6 @@
 import { Container, Flex, Heading, useColorMode } from "@chakra-ui/react";
 import React from "react";
-import ColorSwitcher from "./ColorSwitcher";
+import ColorSwitcher from "../ColorSwitcher";
 const Header = ({ name = "John" }) => {
   const colorHook = useColorMode();
 

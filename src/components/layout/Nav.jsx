@@ -14,8 +14,8 @@ import {
   MenuList,
   MenuItem,
 } from "@chakra-ui/react";
-import logo from "../assets/logo.svg";
-import BulletIcon from "./BulletIcon";
+import logo from "../../assets/logo.svg";
+import BulletIcon from "../icons/BulletIcon";
 import { NavLink as RouterLink } from "react-router-dom";
 import { HamburgerIcon, SettingsIcon } from "@chakra-ui/icons";
 

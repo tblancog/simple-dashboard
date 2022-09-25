@@ -6,7 +6,7 @@ import {
   Heading,
   Text,
 } from "@chakra-ui/react";
-import { downloadCsv } from "../helpers";
+import { downloadCsv } from "../../helpers";
 import React, { useState } from "react";
 import { BsDownload } from "react-icons/bs";
 
