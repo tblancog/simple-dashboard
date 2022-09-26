@@ -3,21 +3,22 @@ import Home from "./components/routes/Home";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Report from "components/routes/Report";
-import { UserContext } from "context";
+import Settings from "components/routes/Settings";
+import { SettingsProvider } from "./context/SettingsContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <UserContext.Provider value="Tony">
+    <SettingsProvider>
+      <BrowserRouter>
         <BaseLayout>
           <Routes>
             <Route index element={<Home />} />
             <Route path={"/report"} element={<Report />} />
-            <Route path={"/settings"} element={<>Settings</>} />
+            <Route path={"/settings"} element={<Settings />} />
           </Routes>
         </BaseLayout>
-      </UserContext.Provider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </SettingsProvider>
   );
 }
 

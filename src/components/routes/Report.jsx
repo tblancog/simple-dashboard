@@ -15,7 +15,6 @@ const Report = () => {
 
   return (
     <Container maxW={"1150px"}>
-      {/* Status box */}
       <Box
         w={"100%"}
         minH={"288px"}
