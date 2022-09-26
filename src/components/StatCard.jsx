@@ -7,8 +7,11 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const StatCard = ({ title, bodyText, footerText, bg }) => {
+  const { t } = useTranslation();
+
   const textColor = useColorModeValue("fontColor.darkMode", "white");
   const boxShadow = `0px 3px 6px rgba(0, 0, 0, 0.1), 
                       0px 4px 8px rgba(0, 0, 0, 0.08), 
@@ -36,15 +39,14 @@ const StatCard = ({ title, bodyText, footerText, bg }) => {
         </Heading>
         <Stack spacing={3} ml="auto">
           <Select
-            placeholder="extra small size"
             fontSize={".75rem"}
             variant="unstyled"
             textAlign={"right"}
             defaultValue={"last-week"}
             color={textColor}
           >
-            <option value="last-week">Last Week</option>
-            <option value="last-month">Last Month</option>
+            <option value="last-week">{t("lastWeek")}</option>
+            <option value="last-month">{t("lastMonth")}</option>
           </Select>
         </Stack>
       </Flex>

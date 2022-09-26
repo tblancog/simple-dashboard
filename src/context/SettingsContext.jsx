@@ -1,15 +1,35 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useReducer } from "react";
 
 const SettingsContext = createContext(undefined);
 
-export const SettingsProvider = ({ children }) => {
-  const [displayName, setDisplayName] = useState("John");
+const reducerFn = (state, action) => {
+  switch (action.type) {
+    case "changeDisplayName":
+      return { ...state, displayName: action.payload };
 
-  const changeDisplayName = (newName) => {
-    setDisplayName(newName);
-  };
+    default:
+      throw new Error("Unknown action");
+  }
+};
+
+export const SettingsProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducerFn, {
+    displayName: "John",
+  });
+
+  const changeDisplayName = (newName) =>
+    dispatch({
+      type: "changeDisplayName",
+      payload: newName,
+    });
+
   return (
-    <SettingsContext.Provider value={{ displayName, changeDisplayName }}>
+    <SettingsContext.Provider
+      value={{
+        displayName: state.displayName,
+        changeDisplayName,
+      }}
+    >
       {children}
     </SettingsContext.Provider>
   );

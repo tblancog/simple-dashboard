@@ -1,9 +1,12 @@
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import { Show, Box, Switch, Text } from "@chakra-ui/react";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const ColorSwitcher = ({ colorState }) => {
   const { colorMode, toggleColorMode } = colorState;
+  const { t } = useTranslation();
+
   const textSettings = {
     color: colorMode === "dark" ? "fontColor.secondary" : "fontColor.primary",
     fontWeight: "bold",
@@ -26,7 +29,7 @@ const ColorSwitcher = ({ colorState }) => {
       {/* Tablets and above  */}
       <Show above="lg">
         <Text {...textSettings}>
-          {colorMode === "dark" ? "Light Mode" : "Dark Mode"}
+          {colorMode === "dark" ? t("lightMode") : t("darkMode")}
           <Switch
             color={"navy.1000"}
             size="lg"

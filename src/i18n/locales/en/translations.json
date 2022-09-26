@@ -1,0 +1,26 @@
+{
+  "home": "Home",
+  "report": "Report",
+  "settings": "Settings",
+
+  "hello": "Hello",
+  "displayName": "Display Name",
+  "darkMode": "Dark Mode",
+  "lightMode": "light Mode",
+
+  "locale": "Locale",
+
+  "podOnlineStatus": "Pod Online Status",
+  "improvement": "improvement",
+  "totalDeliveries": "Total Deliveries",
+  "totalTimeInPod": "Total Time in Pod",
+  "totalUsers": "Total users",
+  "lastWeek": "Last Week",
+  "lastMonth": "Last Month",
+  "exportCsvFile": "Export CSV file",
+  "exportCsv": "Export CSV",
+  "downloadStarted": "Download started!",
+
+  "save": "Save",
+  "setDisplayName": "Please set a display name"
+}

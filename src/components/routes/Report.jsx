@@ -9,9 +9,11 @@ import {
 import { downloadCsv } from "../../helpers";
 import React, { useState } from "react";
 import { BsDownload } from "react-icons/bs";
+import { useTranslation } from "react-i18next";
 
 const Report = () => {
   const [isDownloadStarted, setIsDownloadStarted] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <Container maxW={"1150px"}>
@@ -26,7 +28,7 @@ const Report = () => {
         rounded="md"
       >
         <Heading color={"typography.primary"} fontSize={"1.5rem"}>
-          Export CSV file
+          {t("exportCsvFile")}
         </Heading>
         <Center height={"200px"}>
           {!isDownloadStarted ? (
@@ -35,7 +37,7 @@ const Report = () => {
               color={"fontColor.primary"}
               onClick={() => downloadCsv(setIsDownloadStarted)}
             >
-              Export CSV
+              {t("exportCsv")}
             </Button>
           ) : (
             <Text
@@ -43,7 +45,7 @@ const Report = () => {
               fontWeight={"bold"}
               color={"fontColor.primary"}
             >
-              Download started!
+              {t("downloadStarted")}
             </Text>
           )}
         </Center>

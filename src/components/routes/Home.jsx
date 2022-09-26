@@ -9,8 +9,10 @@ import {
 import PodLocationList from "components/PodLocationList";
 import StatCard from "components/StatCard";
 import { formatThousand, toHHMM } from "helpers";
+import { useTranslation } from "react-i18next";
 const Home = () => {
   const [pods, setPods] = useState({ Stats: {}, pod: {} });
+  const { t } = useTranslation();
 
   useEffect(() => {
     fetch("/api/home")
@@ -42,7 +44,7 @@ const Home = () => {
         rounded="md"
       >
         <Heading color={"typography.primary"} fontSize={"1.5rem"}>
-          Pod Online Status
+          {t("podOnlineStatus")}
         </Heading>
 
         {/* Pod locations */}
@@ -52,21 +54,21 @@ const Home = () => {
       {/* Stat Cards */}
       <Flex wrap={"wrap"} mt={"25px"} justifyContent={"space-between"} gap={3}>
         <StatCard
-          title="Total Deliveries"
+          title={t("totalDeliveries")}
           bodyText={pods.Stats.totalDeliveries}
-          footerText="25% Improvement"
+          footerText={`25% ${t("improvement")}`}
           bg={bg.cardOneBg}
         />
         <StatCard
-          title="Total Time in Pod"
+          title={t("totalTimeInPod")}
           bodyText={toHHMM(pods.Stats.totalTimeInPod)}
-          footerText="48% Improvement"
+          footerText={`48% ${t("improvement")}`}
           bg={bg.cardTwoBg}
         />
         <StatCard
-          title="Total Users"
+          title={t("totalUsers")}
           bodyText={formatThousand(pods.Stats.totalUsers)}
-          footerText="48% Improvement"
+          footerText={`48% ${t("improvement")}`}
           bg={bg.cardThreeBg}
         />
       </Flex>

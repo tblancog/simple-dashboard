@@ -3,20 +3,31 @@ import {
   Container,
   Box,
   FormControl,
-  FormHelperText,
   FormLabel,
   Input,
   Button,
   FormErrorMessage,
   Flex,
+  Select,
 } from "@chakra-ui/react";
 import SettingsContext from "context/SettingsContext";
+import { useTranslation } from "react-i18next";
 
 const Settings = () => {
   const { displayName, changeDisplayName } = useContext(SettingsContext);
-  const [name, setName] = useState(displayName);
+  const { i18n, t } = useTranslation();
+  const [setting, setSetting] = useState({
+    name: displayName,
+    loc: i18n.language,
+  });
+  const errorInName = setting.name === "";
 
-  const error = name === "";
+  // Language settings
+
+  function changeLanguage(newLang) {
+    i18n.changeLanguage(newLang);
+  }
+
   return (
     <Container maxW={"1150px"}>
       <Box
@@ -29,26 +40,59 @@ const Settings = () => {
         p="6"
         rounded="md"
       >
-        <Flex>
-          <FormControl maxW={"400px"} isInvalid={error}>
+        <Flex flexDirection={"column"} gap={10}>
+          {/* DisplayName */}
+          <FormControl maxW={"400px"} isInvalid={errorInName}>
             <FormLabel fontSize={"lg"} fontWeight={"bold"}>
-              Name
+              {t("displayName")}
             </FormLabel>
             <Flex gap={3}>
-              <Input value={name} onChange={(e) => setName(e.target.value)} />
+              <Input
+                value={setting.name}
+                onChange={(e) =>
+                  setSetting((prevState) => ({
+                    ...prevState,
+                    name: e.target.value,
+                  }))
+                }
+              />
               <Button
                 type={"button"}
                 colorScheme="teal"
-                onClick={() => changeDisplayName(name)}
+                onClick={() => changeDisplayName(setting.name)}
               >
-                Save
+                {t("save")}
               </Button>
             </Flex>
-            {!error ? (
-              <FormHelperText>Set your display name here</FormHelperText>
-            ) : (
-              <FormErrorMessage>Please set a display name</FormErrorMessage>
-            )}
+            {<FormErrorMessage>{t("setDisplayName")}</FormErrorMessage>}
+          </FormControl>
+
+          {/* Locale */}
+          <FormControl maxW={"400px"}>
+            <FormLabel fontSize={"lg"} fontWeight={"bold"}>
+              {t("locale")}
+            </FormLabel>
+            <Flex gap={3}>
+              <Select
+                value={setting.loc}
+                onChange={(e) => {
+                  setSetting((prevState) => ({
+                    ...prevState,
+                    loc: e.target.value,
+                  }));
+                }}
+              >
+                <option value={"en"}>(en) English</option>
+                <option value={"es"}>(es) Español</option>
+              </Select>
+              <Button
+                type={"button"}
+                colorScheme="teal"
+                onClick={() => changeLanguage(setting.loc)}
+              >
+                {t("save")}
+              </Button>
+            </Flex>{" "}
           </FormControl>
         </Flex>
       </Box>

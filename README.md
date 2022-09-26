@@ -72,5 +72,4 @@ For basic frontend requirements spent around 6 hours spent among three days.
 - Spent so much time trying to set and extend a theme.
 - Spent some time trying to be more precise on sizes as mobile was an optional but (at least for me) is required these days.
 - Spent so much time trying to refactor and still needs some more refactoring.
-- Working in progress on unit tests
 - Overall, I really enjoyed making this challenge.
