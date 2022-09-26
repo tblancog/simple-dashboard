@@ -4,7 +4,12 @@ import React from "react";
 
 const ColorSwitcher = ({ colorState }) => {
   const { colorMode, toggleColorMode } = colorState;
-
+  const textSettings = {
+    color: colorMode === "dark" ? "fontColor.secondary" : "fontColor.primary",
+    fontWeight: "bold",
+    marginLeft: "auto",
+    display: "inline",
+  };
   return (
     <>
       {/* Mobile */}
@@ -20,20 +25,8 @@ const ColorSwitcher = ({ colorState }) => {
 
       {/* Tablets and above  */}
       <Show above="lg">
-        <Text
-          color={"typography.secondary"}
-          fontWeight={"bold"}
-          marginLeft={"auto"}
-        >
-          {colorMode === "dark" ? (
-            <Text display={"inline"} color="white">
-              Light Mode
-            </Text>
-          ) : (
-            <Text display={"inline"} color="fontColor.primary">
-              Dark Mode
-            </Text>
-          )}
+        <Text {...textSettings}>
+          {colorMode === "dark" ? "Light Mode" : "Dark Mode"}
           <Switch
             color={"navy.1000"}
             size="lg"

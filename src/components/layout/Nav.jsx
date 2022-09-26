@@ -44,7 +44,7 @@ const Nav = () => (
     pt={{ base: 5, lg: "75px" }}
     h={{ lg: "100vh" }}
   >
-    <Image src={logo} />
+    <Image src={logo} pb={5} />
 
     {/* Mobile */}
     <Show below="lg">
